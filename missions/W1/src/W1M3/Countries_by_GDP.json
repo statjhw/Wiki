@@ -1,0 +1,754 @@
+[
+    {
+        "Country":"Aruba",
+        "GDP (1B USd)":5.19
+    },
+    {
+        "Country":"Angola",
+        "GDP (1B USd)":139.54
+    },
+    {
+        "Country":"Albania",
+        "GDP (1B USd)":41.12
+    },
+    {
+        "Country":"United Arab Emirates",
+        "GDP (1B USd)":764.85
+    },
+    {
+        "Country":"Argentina",
+        "GDP (1B USd)":842.59
+    },
+    {
+        "Country":"Armenia",
+        "GDP (1B USd)":38.39
+    },
+    {
+        "Country":"Antigua and Barbuda",
+        "GDP (1B USd)":2.93
+    },
+    {
+        "Country":"Australia",
+        "GDP (1B USd)":2335.26
+    },
+    {
+        "Country":"Austria",
+        "GDP (1B USd)":685.25
+    },
+    {
+        "Country":"Azerbaijan",
+        "GDP (1B USd)":100.82
+    },
+    {
+        "Country":"Burundi",
+        "GDP (1B USd)":9.73
+    },
+    {
+        "Country":"Belgium",
+        "GDP (1B USd)":849.31
+    },
+    {
+        "Country":"Benin",
+        "GDP (1B USd)":37.73
+    },
+    {
+        "Country":"Burkina Faso",
+        "GDP (1B USd)":40.22
+    },
+    {
+        "Country":"Bangladesh",
+        "GDP (1B USd)":716.74
+    },
+    {
+        "Country":"Bulgaria",
+        "GDP (1B USd)":177.26
+    },
+    {
+        "Country":"Bahrain",
+        "GDP (1B USd)":59.38
+    },
+    {
+        "Country":"Bahamas, The",
+        "GDP (1B USd)":19.17
+    },
+    {
+        "Country":"Bosnia and Herzegovina",
+        "GDP (1B USd)":44.11
+    },
+    {
+        "Country":"Belarus",
+        "GDP (1B USd)":108.07
+    },
+    {
+        "Country":"Belize",
+        "GDP (1B USd)":3.93
+    },
+    {
+        "Country":"Brazil",
+        "GDP (1B USd)":2814.46
+    },
+    {
+        "Country":"Barbados",
+        "GDP (1B USd)":9.66
+    },
+    {
+        "Country":"Brunei Darussalam",
+        "GDP (1B USd)":20.44
+    },
+    {
+        "Country":"Bhutan",
+        "GDP (1B USd)":5.46
+    },
+    {
+        "Country":"Botswana",
+        "GDP (1B USd)":28.77
+    },
+    {
+        "Country":"Central African Republic",
+        "GDP (1B USd)":5.21
+    },
+    {
+        "Country":"Canada",
+        "GDP (1B USd)":2910.47
+    },
+    {
+        "Country":"Switzerland",
+        "GDP (1B USd)":1259.07
+    },
+    {
+        "Country":"Chile",
+        "GDP (1B USd)":431.1
+    },
+    {
+        "Country":"China, People's Republic of",
+        "GDP (1B USd)":26336.99
+    },
+    {
+        "Country":"Côte d'Ivoire",
+        "GDP (1B USd)":155.67
+    },
+    {
+        "Country":"Cameroon",
+        "GDP (1B USd)":91.53
+    },
+    {
+        "Country":"Congo, Dem. Rep. of the",
+        "GDP (1B USd)":115.22
+    },
+    {
+        "Country":"Congo, Republic of ",
+        "GDP (1B USd)":21.67
+    },
+    {
+        "Country":"Colombia",
+        "GDP (1B USd)":552.72
+    },
+    {
+        "Country":"Comoros",
+        "GDP (1B USd)":2.25
+    },
+    {
+        "Country":"Cabo Verde",
+        "GDP (1B USd)":4.1
+    },
+    {
+        "Country":"Costa Rica",
+        "GDP (1B USd)":138.24
+    },
+    {
+        "Country":"Cyprus",
+        "GDP (1B USd)":52.2
+    },
+    {
+        "Country":"Czech Republic",
+        "GDP (1B USd)":485.68
+    },
+    {
+        "Country":"Germany",
+        "GDP (1B USd)":6013.75
+    },
+    {
+        "Country":"Djibouti",
+        "GDP (1B USd)":6.56
+    },
+    {
+        "Country":"Dominica",
+        "GDP (1B USd)":0.96
+    },
+    {
+        "Country":"Denmark",
+        "GDP (1B USd)":585.84
+    },
+    {
+        "Country":"Dominican Republic",
+        "GDP (1B USd)":183.12
+    },
+    {
+        "Country":"Algeria",
+        "GDP (1B USd)":309.0
+    },
+    {
+        "Country":"Ecuador",
+        "GDP (1B USd)":159.38
+    },
+    {
+        "Country":"Egypt",
+        "GDP (1B USd)":589.85
+    },
+    {
+        "Country":"Spain",
+        "GDP (1B USd)":2380.02
+    },
+    {
+        "Country":"Estonia",
+        "GDP (1B USd)":61.3
+    },
+    {
+        "Country":"Ethiopia",
+        "GDP (1B USd)":217.93
+    },
+    {
+        "Country":"Finland",
+        "GDP (1B USd)":381.55
+    },
+    {
+        "Country":"Fiji",
+        "GDP (1B USd)":8.26
+    },
+    {
+        "Country":"France",
+        "GDP (1B USd)":4009.17
+    },
+    {
+        "Country":"Micronesia, Fed. States of",
+        "GDP (1B USd)":0.58
+    },
+    {
+        "Country":"Gabon",
+        "GDP (1B USd)":26.9
+    },
+    {
+        "Country":"United Kingdom",
+        "GDP (1B USd)":5199.78
+    },
+    {
+        "Country":"Georgia",
+        "GDP (1B USd)":49.8
+    },
+    {
+        "Country":"Ghana",
+        "GDP (1B USd)":135.91
+    },
+    {
+        "Country":"Guinea",
+        "GDP (1B USd)":47.78
+    },
+    {
+        "Country":"Gambia, The",
+        "GDP (1B USd)":3.57
+    },
+    {
+        "Country":"Guinea-Bissau",
+        "GDP (1B USd)":3.68
+    },
+    {
+        "Country":"Equatorial Guinea",
+        "GDP (1B USd)":16.18
+    },
+    {
+        "Country":"Greece",
+        "GDP (1B USd)":351.61
+    },
+    {
+        "Country":"Grenada",
+        "GDP (1B USd)":1.85
+    },
+    {
+        "Country":"Guatemala",
+        "GDP (1B USd)":174.49
+    },
+    {
+        "Country":"Guyana",
+        "GDP (1B USd)":40.27
+    },
+    {
+        "Country":"Hong Kong SAR",
+        "GDP (1B USd)":536.95
+    },
+    {
+        "Country":"Honduras",
+        "GDP (1B USd)":51.08
+    },
+    {
+        "Country":"Croatia",
+        "GDP (1B USd)":135.72
+    },
+    {
+        "Country":"Haiti",
+        "GDP (1B USd)":32.37
+    },
+    {
+        "Country":"Hungary",
+        "GDP (1B USd)":331.13
+    },
+    {
+        "Country":"Indonesia",
+        "GDP (1B USd)":2079.14
+    },
+    {
+        "Country":"India",
+        "GDP (1B USd)":6627.98
+    },
+    {
+        "Country":"Ireland",
+        "GDP (1B USd)":880.83
+    },
+    {
+        "Country":"Iran",
+        "GDP (1B USd)":511.32
+    },
+    {
+        "Country":"Iraq",
+        "GDP (1B USd)":345.91
+    },
+    {
+        "Country":"Iceland",
+        "GDP (1B USd)":58.16
+    },
+    {
+        "Country":"Israel",
+        "GDP (1B USd)":799.06
+    },
+    {
+        "Country":"Italy",
+        "GDP (1B USd)":2985.05
+    },
+    {
+        "Country":"Jamaica",
+        "GDP (1B USd)":27.81
+    },
+    {
+        "Country":"Jordan",
+        "GDP (1B USd)":73.66
+    },
+    {
+        "Country":"Japan",
+        "GDP (1B USd)":5119.89
+    },
+    {
+        "Country":"Kazakhstan",
+        "GDP (1B USd)":429.48
+    },
+    {
+        "Country":"Kenya",
+        "GDP (1B USd)":166.08
+    },
+    {
+        "Country":"Kyrgyz Republic",
+        "GDP (1B USd)":28.16
+    },
+    {
+        "Country":"Cambodia",
+        "GDP (1B USd)":69.56
+    },
+    {
+        "Country":"Kiribati",
+        "GDP (1B USd)":0.41
+    },
+    {
+        "Country":"Saint Kitts and Nevis",
+        "GDP (1B USd)":1.43
+    },
+    {
+        "Country":"Korea, Republic of",
+        "GDP (1B USd)":2271.15
+    },
+    {
+        "Country":"Kuwait",
+        "GDP (1B USd)":190.18
+    },
+    {
+        "Country":"Lao P.D.R.",
+        "GDP (1B USd)":21.34
+    },
+    {
+        "Country":"Liberia",
+        "GDP (1B USd)":7.28
+    },
+    {
+        "Country":"Libya",
+        "GDP (1B USd)":57.86
+    },
+    {
+        "Country":"Saint Lucia",
+        "GDP (1B USd)":3.28
+    },
+    {
+        "Country":"Liechtenstein",
+        "GDP (1B USd)":12.12
+    },
+    {
+        "Country":"Lesotho",
+        "GDP (1B USd)":2.88
+    },
+    {
+        "Country":"Lithuania",
+        "GDP (1B USd)":125.88
+    },
+    {
+        "Country":"Luxembourg",
+        "GDP (1B USd)":126.83
+    },
+    {
+        "Country":"Latvia",
+        "GDP (1B USd)":63.66
+    },
+    {
+        "Country":"Macao SAR",
+        "GDP (1B USd)":66.88
+    },
+    {
+        "Country":"Morocco",
+        "GDP (1B USd)":251.96
+    },
+    {
+        "Country":"Moldova",
+        "GDP (1B USd)":30.0
+    },
+    {
+        "Country":"Madagascar",
+        "GDP (1B USd)":30.99
+    },
+    {
+        "Country":"Maldives",
+        "GDP (1B USd)":10.43
+    },
+    {
+        "Country":"Mexico",
+        "GDP (1B USd)":2442.32
+    },
+    {
+        "Country":"Marshall Islands",
+        "GDP (1B USd)":0.41
+    },
+    {
+        "Country":"North Macedonia ",
+        "GDP (1B USd)":25.52
+    },
+    {
+        "Country":"Mali",
+        "GDP (1B USd)":37.41
+    },
+    {
+        "Country":"Malta",
+        "GDP (1B USd)":38.34
+    },
+    {
+        "Country":"Myanmar",
+        "GDP (1B USd)":84.16
+    },
+    {
+        "Country":"Montenegro",
+        "GDP (1B USd)":12.45
+    },
+    {
+        "Country":"Mongolia",
+        "GDP (1B USd)":32.5
+    },
+    {
+        "Country":"Mozambique",
+        "GDP (1B USd)":38.01
+    },
+    {
+        "Country":"Mauritania",
+        "GDP (1B USd)":15.5
+    },
+    {
+        "Country":"Mauritius",
+        "GDP (1B USd)":21.45
+    },
+    {
+        "Country":"Malawi",
+        "GDP (1B USd)":31.32
+    },
+    {
+        "Country":"Malaysia",
+        "GDP (1B USd)":646.46
+    },
+    {
+        "Country":"Namibia",
+        "GDP (1B USd)":20.58
+    },
+    {
+        "Country":"Niger",
+        "GDP (1B USd)":35.69
+    },
+    {
+        "Country":"Nigeria",
+        "GDP (1B USd)":443.6
+    },
+    {
+        "Country":"Nicaragua",
+        "GDP (1B USd)":27.76
+    },
+    {
+        "Country":"Netherlands",
+        "GDP (1B USd)":1607.57
+    },
+    {
+        "Country":"Norway",
+        "GDP (1B USd)":621.81
+    },
+    {
+        "Country":"Nepal",
+        "GDP (1B USd)":70.12
+    },
+    {
+        "Country":"Nauru",
+        "GDP (1B USd)":0.22
+    },
+    {
+        "Country":"New Zealand",
+        "GDP (1B USd)":327.46
+    },
+    {
+        "Country":"Oman",
+        "GDP (1B USd)":133.37
+    },
+    {
+        "Country":"Panama",
+        "GDP (1B USd)":121.44
+    },
+    {
+        "Country":"Peru",
+        "GDP (1B USd)":393.88
+    },
+    {
+        "Country":"Philippines",
+        "GDP (1B USd)":746.5
+    },
+    {
+        "Country":"Palau",
+        "GDP (1B USd)":0.44
+    },
+    {
+        "Country":"Papua New Guinea",
+        "GDP (1B USd)":38.29
+    },
+    {
+        "Country":"Poland",
+        "GDP (1B USd)":1386.32
+    },
+    {
+        "Country":"Puerto Rico",
+        "GDP (1B USd)":145.9
+    },
+    {
+        "Country":"Portugal",
+        "GDP (1B USd)":420.08
+    },
+    {
+        "Country":"Paraguay",
+        "GDP (1B USd)":64.35
+    },
+    {
+        "Country":"Qatar",
+        "GDP (1B USd)":296.85
+    },
+    {
+        "Country":"Romania",
+        "GDP (1B USd)":514.34
+    },
+    {
+        "Country":"Russian Federation",
+        "GDP (1B USd)":2829.86
+    },
+    {
+        "Country":"Rwanda",
+        "GDP (1B USd)":19.97
+    },
+    {
+        "Country":"Saudi Arabia",
+        "GDP (1B USd)":1596.41
+    },
+    {
+        "Country":"Sudan",
+        "GDP (1B USd)":55.57
+    },
+    {
+        "Country":"Senegal",
+        "GDP (1B USd)":50.16
+    },
+    {
+        "Country":"Singapore",
+        "GDP (1B USd)":721.32
+    },
+    {
+        "Country":"Solomon Islands",
+        "GDP (1B USd)":2.55
+    },
+    {
+        "Country":"Sierra Leone",
+        "GDP (1B USd)":11.16
+    },
+    {
+        "Country":"El Salvador",
+        "GDP (1B USd)":46.25
+    },
+    {
+        "Country":"San Marino",
+        "GDP (1B USd)":2.7
+    },
+    {
+        "Country":"Somalia",
+        "GDP (1B USd)":18.73
+    },
+    {
+        "Country":"Serbia",
+        "GDP (1B USd)":148.71
+    },
+    {
+        "Country":"São Tomé and Príncipe",
+        "GDP (1B USd)":1.62
+    },
+    {
+        "Country":"Suriname",
+        "GDP (1B USd)":11.54
+    },
+    {
+        "Country":"Slovak Republic",
+        "GDP (1B USd)":199.11
+    },
+    {
+        "Country":"Slovenia",
+        "GDP (1B USd)":102.03
+    },
+    {
+        "Country":"Sweden",
+        "GDP (1B USd)":832.1
+    },
+    {
+        "Country":"Eswatini",
+        "GDP (1B USd)":6.32
+    },
+    {
+        "Country":"Seychelles",
+        "GDP (1B USd)":2.7
+    },
+    {
+        "Country":"Chad",
+        "GDP (1B USd)":29.21
+    },
+    {
+        "Country":"Togo",
+        "GDP (1B USd)":16.24
+    },
+    {
+        "Country":"Thailand",
+        "GDP (1B USd)":654.08
+    },
+    {
+        "Country":"Tajikistan",
+        "GDP (1B USd)":23.95
+    },
+    {
+        "Country":"Turkmenistan",
+        "GDP (1B USd)":110.59
+    },
+    {
+        "Country":"Timor-Leste",
+        "GDP (1B USd)":2.8
+    },
+    {
+        "Country":"Tonga",
+        "GDP (1B USd)":0.72
+    },
+    {
+        "Country":"Trinidad and Tobago",
+        "GDP (1B USd)":30.86
+    },
+    {
+        "Country":"Tunisia",
+        "GDP (1B USd)":63.86
+    },
+    {
+        "Country":"Türkiye, Republic of",
+        "GDP (1B USd)":1961.78
+    },
+    {
+        "Country":"Tuvalu",
+        "GDP (1B USd)":0.07
+    },
+    {
+        "Country":"Taiwan Province of China",
+        "GDP (1B USd)":1169.82
+    },
+    {
+        "Country":"Tanzania",
+        "GDP (1B USd)":138.58
+    },
+    {
+        "Country":"Uganda",
+        "GDP (1B USd)":106.66
+    },
+    {
+        "Country":"Ukraine",
+        "GDP (1B USd)":288.85
+    },
+    {
+        "Country":"Uruguay",
+        "GDP (1B USd)":109.84
+    },
+    {
+        "Country":"United States",
+        "GDP (1B USd)":36814.25
+    },
+    {
+        "Country":"Uzbekistan",
+        "GDP (1B USd)":240.77
+    },
+    {
+        "Country":"Saint Vincent and the Grenadines",
+        "GDP (1B USd)":1.56
+    },
+    {
+        "Country":"Vietnam",
+        "GDP (1B USd)":666.79
+    },
+    {
+        "Country":"Vanuatu",
+        "GDP (1B USd)":1.41
+    },
+    {
+        "Country":"Samoa",
+        "GDP (1B USd)":1.6
+    },
+    {
+        "Country":"Yemen",
+        "GDP (1B USd)":25.78
+    },
+    {
+        "Country":"South Africa",
+        "GDP (1B USd)":512.02
+    },
+    {
+        "Country":"Zambia",
+        "GDP (1B USd)":50.43
+    },
+    {
+        "Country":"Zimbabwe",
+        "GDP (1B USd)":63.69
+    },
+    {
+        "Country":"South Sudan, Republic of",
+        "GDP (1B USd)":8.12
+    },
+    {
+        "Country":"Andorra",
+        "GDP (1B USd)":5.32
+    },
+    {
+        "Country":"Kosovo",
+        "GDP (1B USd)":17.71
+    }
+]
