@@ -12,7 +12,6 @@ class ETLLogger:
     def __init__(self, log_file='etl_project_log.txt'):
         """
         로거 초기화
-        :param log_file: 로그 파일 경로
         """
         self.log_file = log_file
 
@@ -27,7 +26,6 @@ class ETLLogger:
     def _write_log(self, message):
         """
         로그 메시지를 파일에 append하고 화면에 출력
-        :param message: 로그 메시지
         """
         timestamp = self._format_time()
         log_entry = f"{timestamp}, {message}"
@@ -42,16 +40,12 @@ class ETLLogger:
     def log_start(self, stage_name):
         """
         ETL 단계 시작 로그
-        :param stage_name: 단계 이름
         """
         self._write_log(f"{stage_name} Started")
 
     def log_end(self, stage_name, status='success', error=None):
         """
         ETL 단계 종료 로그
-        :param stage_name: 단계 이름
-        :param status: 'success' 또는 'error'
-        :param error: 에러 메시지 (있는 경우)
         """
         if status == 'success':
             self._write_log(f"{stage_name} Completed")
@@ -75,55 +69,59 @@ class StoregeLoader(ABC):
     def load(self):
         pass
 
-
-class JsonLoader(StoregeLoader):
-    """Json 형식 저장 클래스"""
-    def __init__(self, logger=None):
-        self.logger = logger or ETLLogger()
-        self.updated_time = datetime.now()
-
-    def load(self, df: pd.DataFrame, metadata):
-        """데이터 저장 함수"""
-        self.logger.log_start("Load Data to JSON")
-
-        try:
-            #데이터 프레임 dict 변환
-            data = df.to_dict(orient='records')
-
-            #메타데이터와 함께 저장
-            load_data = {
-                "metadata": metadata,
-                "data": data
-            }
-
-            with open('Countries_by_GDP.jsonl', 'a', encoding="utf-8") as f:
-                f.write(json.dumps(load_data, ensure_ascii=False, indent=4) + "\n")
-
-            self.logger.log_end("Load Data to JSON", status='success')
-
-        except Exception as e:
-            self.logger.log_end("Load Data to JSON", status='error', error=e)
-            raise
-
-
 class SqliteLoader(StoregeLoader):
     """Sqlite DB 저장 함수"""
     def __init__(self, db_name: str='World_Economies', logger=None):
         self.conn = sqlite3.connect(db_name)
         self.logger = logger or ETLLogger()
 
-    def load(self, df: pd.DataFrame):
+    def load(self, df: pd.DataFrame, metadata):
         self.logger.log_start("Load Data to SQLite")
 
         try:
-            df.to_sql("cleaned_data", con=self.conn, if_exists='replace', index=False)
+            df['year'] = metadata['year']
+            df['update_time'] = metadata['updated_time']
+
+            df.to_sql("cleaned_data", con=self.conn, if_exists='append', index=False)
             self.conn.commit()
             self.conn.close()
+
             self.logger.log_end("Load Data to SQLite", status='success')
         except Exception as e:
             self.logger.log_end("Load Data to SQLite", status='error', error=e)
             raise
 
+class SqliteReader:
+    """sqlite DB 읽기 함수"""
+    def __init__(self, db_name: str='World_Economies', logger=None):
+        self.conn = sqlite3.connect(db_name)
+        self.logger = logger or ETLLogger()
+
+    def query(self, query):
+        """SQL 쿼리 실행 및 결과 반환"""
+        try:
+            df = pd.read_sql_query(query, self.conn)
+            return df
+        except Exception as e:
+            self.logger.log_end("Query Execution", status='error', error=e)
+            return None
+
+    def pretty_print(self, df):
+        """DataFrame을 보기 좋게 출력"""
+        if df is None or df.empty:
+            print("데이터가 없습니다.")
+            return
+
+        print("\n[GDP 100B USD 이상 국가]")
+        print("=" * 70)
+        print(f"총 {len(df)}개국")
+        print("-" * 70)
+
+        # 인덱스를 1부터 시작
+        df_display = df.copy()
+        df_display.index = range(1, len(df_display) + 1)
+        print(df_display.to_string())
+        print("=" * 70)
 
 class ETLManager:
     def __init__(self, loader: StoregeLoader, logger=None):
@@ -243,47 +241,80 @@ class ETLManager:
             self.logger.log_end("Transform Data", status='error', error=e)
             return None
 
-    def monitor(self, df):
-        """화면 출력 진행"""
-        # [Load / Display] 화면 출력
-        print(f"\n[IMF GDP 분석 보고서]")
-        print("=" * 70)
+    def monitor(self):
+        """GDP 100B USD 이상 국가 조회 및 출력"""
+        self.logger.log_start("Monitor GDP Data")
 
-        # 1. GDP 100B USD 이상 국가 (높은 순 정렬)
-        print(f"\n1. 시장 규모 100B USD 이상 국가 (총 {len(df[df['GDP (1B USD)'] >= 100])}개국)")
-        print("-" * 70)
-        report_1 = df[df['GDP (1B USD)'] >= 100].copy()
-        report_1.index = range(1, len(report_1) + 1)
-        print(report_1[['Country', 'GDP (1B USD)', 'Region']])
+        try:
+            # SqliteReader 인스턴스 생성
+            reader = SqliteReader(logger=self.logger)
 
-        # 2. Region별 Top5 국가의 GDP 평균
-        print(f"\n2. Region별 Top5 국가의 GDP 평균")
-        print("=" * 70)
+            print(f"\n[IMF GDP 분석 보고서]")
+            print("=" * 70)
 
-        regions = df['Region'].unique()
-        region_stats = []
+            # 1. GDP 100B USD 이상 국가 조회 (최신 update_time만)
+            print(f"\n1. 시장 규모 100B USD 이상 국가")
+            print("-" * 70)
 
-        for region in regions:
-            if region == "Unknown":
-                continue
+            query1 = """
+                SELECT Country, "GDP (1B USD)", Region, year, update_time
+                FROM cleaned_data
+                WHERE "GDP (1B USD)" >= 100
+                  AND update_time = (SELECT MAX(update_time) FROM cleaned_data)
+                ORDER BY "GDP (1B USD)" DESC
+            """
 
-            # 해당 Region의 데이터를 GDP 순으로 정렬하여 상위 5개 선택
-            region_df = df[df['Region'] == region].nlargest(5, 'GDP (1B USD)')
+            df1 = reader.query(query1)
 
-            if len(region_df) > 0:
-                avg_gdp = region_df['GDP (1B USD)'].mean()
-                region_stats.append({
-                    'Region': region,
-                    'Top5 국가 수': len(region_df),
-                    'Top5 평균 GDP (1B USD)': round(avg_gdp, 2)
-                })
+            if df1 is not None and not df1.empty:
+                print(f"총 {len(df1)}개국")
+                print("-" * 70)
+                df1_display = df1.copy()
+                df1_display.index = range(1, len(df1_display) + 1)
+                print(df1_display[['Country', 'GDP (1B USD)', 'Region']].to_string())
+            else:
+                print("데이터가 없습니다.")
 
-        # Region별 통계를 DataFrame으로 변환하여 출력
-        region_stats_df = pd.DataFrame(region_stats)
-        region_stats_df = region_stats_df.sort_values(by='Top5 평균 GDP (1B USD)', ascending=False)
-        region_stats_df.index = range(1, len(region_stats_df) + 1)
-        print(region_stats_df.to_string())
-        print("=" * 70)
+            # 2. Region별 Top5 국가의 GDP 평균
+            print(f"\n2. Region별 Top5 국가의 GDP 평균")
+            print("=" * 70)
+
+            query2 = """
+                WITH RankedData AS (
+                    SELECT
+                        Country,
+                        "GDP (1B USD)",
+                        Region,
+                        ROW_NUMBER() OVER (PARTITION BY Region ORDER BY "GDP (1B USD)" DESC) as rank
+                    FROM cleaned_data
+                    WHERE update_time = (SELECT MAX(update_time) FROM cleaned_data)
+                      AND Region != 'Unknown'
+                )
+                SELECT
+                    Region,
+                    COUNT(*) as "Top5 국가 수",
+                    ROUND(AVG("GDP (1B USD)"), 2) as "Top5 평균 GDP (1B USD)"
+                FROM RankedData
+                WHERE rank <= 5
+                GROUP BY Region
+                ORDER BY "Top5 평균 GDP (1B USD)" DESC
+            """
+
+            df2 = reader.query(query2)
+
+            if df2 is not None and not df2.empty:
+                df2_display = df2.copy()
+                df2_display.index = range(1, len(df2_display) + 1)
+                print(df2_display.to_string())
+            else:
+                print("데이터가 없습니다.")
+
+            print("=" * 70)
+
+            self.logger.log_end("Monitor GDP Data", status='success')
+
+        except Exception as e:
+            self.logger.log_end("Monitor GDP Data", status='error', error=e)
 
     def run(self):
         self.logger.log_start("ETL Process")
@@ -295,19 +326,19 @@ class ETLManager:
 
         if result is not None:
             df, metadata = result
-            self.monitor(df)
             self.loader.load(df, metadata)
             self.logger.log_end("ETL Process", status='success')
         else:
             self.logger.log_end("ETL Process", status='error', error="Transform failed")
 
+        self.monitor()
 
 if __name__ == "__main__":
     # 공유 Logger 인스턴스 생성
     logger = ETLLogger()
 
     # Loader에 logger 주입
-    loader = JsonLoader(logger=logger)
+    loader = SqliteLoader(logger=logger)
 
     # ETLManager 실행
     etl_manager = ETLManager(loader, logger=logger)

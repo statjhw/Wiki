@@ -1,0 +1,4 @@
+pandas>=2.0.0
+requests>=2.31.0
+
+# sqlite3는 Python 표준 라이브러리에 포함되어 있어 별도 설치 불필요
